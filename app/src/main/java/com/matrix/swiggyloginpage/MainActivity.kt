@@ -1,4 +1,6 @@
-package com.matrix.swiggyloginpage
+package com.matrix.git remote add origin https://github.com/Sumilanofficial/project-9-6-2024.git
+git branch -M main
+git push -u origin main
 
 import android.annotation.SuppressLint
 import android.content.Intent
