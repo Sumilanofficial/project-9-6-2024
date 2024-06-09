@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="@dimen/sp_35sp"
+    tools:context=".MainActivity">
+
+<!--    NAME-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_gravity="start"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt55_dp"
+            android:hint="@string/hntname"
+            android:inputType="textPersonName|textCapWords"
+            android:id="@+id/etname"
+
+
+        />
+    </LinearLayout>
+<!--    COLLAGE_NAME-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/collage"
+            android:layout_gravity="start"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/collage"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt55_dp"
+            android:hint="@string/edtclgname"
+            android:id="@+id/etcollage"
+
+
+
+            />
+    </LinearLayout>
+<!--    EMAIL-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:layout_gravity="start"
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/baseline_email_24" />
+
+        <EditText
+            android:id="@+id/etemail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt55_dp"
+            android:hint="@string/hintEmail"
+            android:inputType="textEmailAddress"
+
+            />
+    </LinearLayout>
+<!--    CONTACT-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact"
+            android:layout_gravity="start"
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/contact" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt55_dp"
+            android:hint="@string/hntcnt"
+            android:inputType="phone"
+            android:id="@+id/etphonenumber"
+            />
+    </LinearLayout>
+<!--    enrolled-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_marginTop="@dimen/sp_25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enrolled"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_15"
+
+            />
+
+    </LinearLayout>
+<!--    RADIO_BUTTONS-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbtn1"
+                android:id="@+id/btnyes"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbtn2"
+                android:id="@+id/btnno"
+                android:layout_marginStart="18dp"
+                />
+        </RadioGroup>
+    </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:gravity="center"
+       >
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/edt55_dp"
+           android:layout_marginBottom="@dimen/dp_35"
+           android:hint="@string/find"
+           android:id="@+id/etfindus"
+           android:visibility="gone"
+           />
+
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+        <Button
+
+            android:id="@+id/confirmbutton"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm"
+            />
+        <Button
+
+            android:id="@+id/btncontinue"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="wrap_content"
+            android:text="@string/btncontinue"
+            android:layout_marginLeft="@dimen/dp_60"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
