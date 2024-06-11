@@ -1,6 +1,4 @@
-package com.matrix.git remote add origin https://github.com/Sumilanofficial/project-9-6-2024.git
-git branch -M main
-git push -u origin main
+package com.matrix.swiggyloginpage
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,11 +19,12 @@ class MainActivity : AppCompatActivity() {
     private var etphonenumber: EditText? = null
     private var etname: EditText? = null
     private var etcollage: EditText? = null
-    private var etemail:EditText?=null
-    private var etfindus:EditText?=null
-    private var btnyes:RadioButton?=null
-    private var btncontinne:Button?=null
-
+    private var etemail: EditText? = null
+    private var etfindus: EditText? = null
+    private var btnyes: RadioButton? = null
+    private var btnno: RadioButton? = null
+    private var btncontinne: Button? = null
+    private var rgenrol: RadioGroup? = null
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,70 +41,44 @@ class MainActivity : AppCompatActivity() {
         etphonenumber = findViewById(R.id.etphonenumber)
         etname = findViewById(R.id.etname)
         etcollage = findViewById(R.id.etcollage)
-        etemail=findViewById(R.id.etemail)
-        etfindus=findViewById(R.id.etfindus)
-        btnyes=findViewById(R.id.btnyes)
-        btncontinne=findViewById(R.id.btncontinue)
+        etemail = findViewById(R.id.etemail)
+        etfindus = findViewById(R.id.etfindus)
+        btnyes = findViewById(R.id.btnyes)
+        btnno = findViewById(R.id.btnno)
+        rgenrol = findViewById(R.id.rgenrol)
 
         confirmbutton?.setOnClickListener {
-            var name=etname?.text
-            var collage=etcollage?.text
-            var number=etphonenumber?.text
-            var email=etemail?.text
-            var valid=true
-
-
-            Toast.makeText(this, "$name ,$collage,$number,$email", Toast.LENGTH_LONG).show()
-
-            if (etphonenumber?.text.toString().isEmpty()) {
-                etphonenumber?.error = "Enter your Number"
-                valid=false
-            } else if (etphonenumber?.text.toString().trim().length < 10) {
-                etphonenumber?.error = "Enter a valid number "
-                valid=false
-            }
-            if (etname?.text.toString().isEmpty()) {
+            if (etname?.text?.toString()?.trim().isNullOrEmpty()) {
                 etname?.error = "Enter your Name"
-                valid=false
-            }
-            if (etcollage?.text.toString().isEmpty()) {
+            } else if (etcollage?.text?.toString()?.trim().isNullOrEmpty()) {
                 etcollage?.error = "Enter your Collage"
-                valid=false
-
-            }
-            if (etemail?.text.toString().isEmpty()) {
+            } else if (etphonenumber?.text.toString().trim().isNullOrEmpty()) {
+                etphonenumber?.error = "Enter your Number"
+            } else if (etphonenumber?.text.toString().trim().length < 10) {
+                etphonenumber?.error = "Enter a valid number of 10 digits"
+            } else if (etemail?.text?.toString()?.trim().isNullOrEmpty()) {
                 etemail?.error = "Enter your Email"
-                valid=false
-            }
-            if (valid){
-                Toast.makeText(this,"Details Entered Successfully",Toast.LENGTH_LONG).show()
-            }
-            else{
-                Toast.makeText(this,"Invalid Submittion",Toast.LENGTH_LONG).show()
+            } else if (rgenrol?.checkedRadioButtonId == -1) {
+                Toast.makeText(this, "Select one option", Toast.LENGTH_LONG).show()
+            } else if (btnyes?.isChecked == true && etfindus?.text?.toString()?.trim().isNullOrEmpty()) {
+                etfindus?.error = "Enter how did you find us?"
+            } else {
+                var intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra("name", etname?.text.toString().trim())
+                intent.putExtra("phoneNumber", etphonenumber?.text.toString().trim())
+                startActivity(intent)
             }
         }
-    btnyes?.setOnCheckedChangeListener { buttonView, isChecked ->
-        if (isChecked){
-            etfindus?.visibility= View.VISIBLE
+
+        btnyes?.setOnClickListener {}
+
+        btnyes?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                etfindus?.visibility = View.VISIBLE
+            } else {
+                etfindus?.visibility = View.GONE
+            }
         }
-        else{
-            etfindus?.visibility=View.GONE
-        }
-    }
-      btncontinne?.setOnClickListener {
-          var intent=Intent(this,MainActivity2::class.java)
-          startActivity(intent)
-      }
-
-
-
-
-
-
-
-
-
 
     }
 }
-

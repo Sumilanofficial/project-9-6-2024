@@ -136,6 +136,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
+            android:id="@+id/rgenrol"
             >
 
 
@@ -184,14 +185,6 @@
             android:layout_width="@dimen/dp_110"
             android:layout_height="wrap_content"
             android:text="@string/confirm"
-            />
-        <Button
-
-            android:id="@+id/btncontinue"
-            android:layout_width="@dimen/dp_110"
-            android:layout_height="wrap_content"
-            android:text="@string/btncontinue"
-            android:layout_marginLeft="@dimen/dp_60"
             />
 
     </LinearLayout>
